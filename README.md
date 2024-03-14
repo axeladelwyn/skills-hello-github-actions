@@ -27,30 +27,6 @@ _GitHub scans repositories for known types of secrets, to prevent fraudulent use
 </header>
 
 <!--
-<<<<<<< HEAD
-  <<< Author notes: Finish >>>
-  Review what we learned, ask for feedback, provide next steps.
--->
-
-## Finish
-
-
-Here's a recap of all the tasks you've accomplished in your repository:
-
-- You've created your first GitHub Actions workflow file.
-- You learned where to make your workflow file.
-- You created an event trigger, a job, and steps for your workflow.
-- You're ready to automate anything you can dream of.
-
-### What's next?
-
-- Learn more about GitHub Actions by reading "[Learn GitHub Actions](https://docs.github.com/actions/learn-github-actions)".
-- Use actions created by others in [awesome-actions](https://github.com/sdras/awesome-actions).
-- We'd love to hear what you thought of this course [in our discussion board](https://github.com/orgs/skills/discussions/categories/hello-github-actions).
-- [Take another GitHub Skills course](https://github.com/skills).
-- Learn more about GitHub by reading the "[Get started](https://docs.github.com/get-started)" docs.
-- To find projects to contribute to, check out [GitHub Explore](https://github.com/explore).
-=======
   <<< Author notes: Course start >>>
   Include start button, a note about Actions minutes,
   and tell the learner why they should take the course.
@@ -96,7 +72,6 @@ In this course, you will:
    - You will need to make the repository public, as private repositories do not have access to secret scanning without a [GitHub Advanced Security](https://docs.github.com/en/enterprise-cloud@latest/get-started/learning-about-github/about-github-advanced-security) license.
    - Scroll down and click the **Create repository** button at the bottom of the form.
 3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
->>>>>>> 86beacd (Initial commit)
 
 <footer>
 

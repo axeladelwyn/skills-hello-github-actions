@@ -1,15 +1,14 @@
-name: Step 0, Welcome
+name: Step 1, Enable secret scanning
 
-# This step triggers after the learner creates a new repository from the template.
-# This workflow updates from step 0 to step 1.
+# This step triggers after commit-to-credential-file-desc.
+# This workflow updates from step 1 to step 2.
 
-# This will run every time we create push a commit to `main`.
+# This will run every time we commit-to-credential-file-desc.
 # Reference: https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    paths:
+     - credentials.yml
 
 # Reference: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
 permissions:
@@ -31,18 +30,18 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_start:
-    name: On start
+  on_commit-to-credential-file:
+    name: On commit-to-credential-file
     needs: get_current_step
 
     # We will only run this action when:
     # 1. This repository isn't the template repository.
-    # 2. The step is currently 0.
+    # 2. The step is currently 1.
     # Reference: https://docs.github.com/en/actions/learn-github-actions/contexts
     # Reference: https://docs.github.com/en/actions/learn-github-actions/expressions
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 0 }}
+          && needs.get_current_step.outputs.current_step == 1 }}
 
     # We'll run Ubuntu for performance instead of Mac or Windows.
     runs-on: ubuntu-latest
@@ -54,46 +53,13 @@ jobs:
         with:
           fetch-depth: 0 # Let's get all the branches.
 
-<<<<<<< HEAD
-      # Make a branch, file, and commit for the learner.
-      - name: Prepare a branch, and file
-        run: |
-          echo "Make sure we are on step 0"
-          if [ "$(cat .github/steps/-step.txt)" != 0 ]
-          then
-            echo "Current step is not 0"
-            exit 0
-          fi
+      # TBD-step-1-additional-steps
 
-          echo "Make a branch"
-          BRANCH=welcome-workflow
-          git checkout -b $BRANCH
-
-          echo "Make a commit"
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git commit --allow-empty --message="Create an empty commit"
-
-          echo "Push"
-          git push --set-upstream origin $BRANCH
-
-          echo "Restore main"
-          git checkout main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-=======
-      # TBD-course-set-up
->>>>>>> 86beacd (Initial commit)
-
-      # In README.md, switch step 0 for step 1.
-      - name: Update to step 1
+      # In README.md, switch step 1 for step 2.
+      - name: Update to step 2
         uses: skills/action-update-step@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          from_step: 0
-          to_step: 1
-<<<<<<< HEAD
-          branch_name: welcome-workflow
-=======
+          from_step: 1
+          to_step: 2
           branch_name: main
->>>>>>> 86beacd (Initial commit)

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 X
+=======
+0
+>>>>>>> 86beacd (Initial commit)

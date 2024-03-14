@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 0
 =======
 2
 >>>>>>> 52509ef (Update to 2 in STEP and README.md)
+=======
+X
+>>>>>>> 78ffb61 (Update to X in STEP and README.md)
